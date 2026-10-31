@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-display: 'Orbitron', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #070b14;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+}
+
+/* Custom Medical Tech Styles & Utilities */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom Medical Glass Panels */
+.glass-panel {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(13, 21, 39, 0.85) 100%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-subtle {
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-glow {
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.12), inset 0 0 15px rgba(6, 182, 212, 0.03);
+}
+
+.glass-panel-danger-glow {
+  border: 1px solid rgba(244, 63, 94, 0.4);
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.15), inset 0 0 15px rgba(244, 63, 94, 0.05);
+}
+
+.glass-panel-warning-glow {
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.12), inset 0 0 15px rgba(245, 158, 11, 0.04);
+}
+
+/* Medical Grid Background */
+.bg-medical-grid {
+  background-image: 
+    linear-gradient(to right, rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.bg-medical-dots {
+  background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glowing text and badges */
+.text-glow-cyan {
+  text-shadow: 0 0 12px rgba(6, 182, 212, 0.5);
+}
+
+.text-glow-green {
+  text-shadow: 0 0 12px rgba(16, 185, 129, 0.5);
+}
+
+.text-glow-rose {
+  text-shadow: 0 0 12px rgba(244, 63, 94, 0.5);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 12px rgba(192, 132, 252, 0.5);
+}
+
+/* Pulse animation for live indicators */
+@keyframes live-ping {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.animate-live-pulse {
+  animation: live-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes live-ping-red {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+.animate-live-pulse-red {
+  animation: live-ping-red 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Heartbeat pulse animation */
+@keyframes heart-thump {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.18); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.12); }
+  70% { transform: scale(1); }
+}
+
+.animate-heartbeat {
+  animation: heart-thump 1.2s ease-in-out infinite;
+}
+
+/* Smooth custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(7, 11, 20, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.4);
+}
